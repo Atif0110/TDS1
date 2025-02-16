@@ -4,10 +4,10 @@ FROM python:3.9
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy requirements.txt before running pip install (for caching)
+# Copy only requirements.txt first for caching
 COPY requirements.txt .
 
-# Install dependencies
+# Install dependencies (ignore cache to prevent issues)
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the project files
