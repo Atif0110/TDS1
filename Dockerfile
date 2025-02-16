@@ -79,10 +79,7 @@ RUN pip install --upgrade pip && \
     uvicorn==0.34.0 \
     Werkzeug==3.1.3
 
-# Install dependencies (ignore cache to prevent issues)
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of the project files
+# Copy all project files into the container
 COPY . .
 
 # Command to run the app
