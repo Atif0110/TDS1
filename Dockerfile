@@ -1,5 +1,9 @@
-# Use an official Python runtime as base image
-FROM python:3.9  # Change to 3.10 or 3.11 if needed
+# Single argument (correct)
+FROM python:3.9
+
+# Three arguments (correct)
+FROM python:3.9 AS builder
+
 
 # Set the working directory in the container
 WORKDIR /app
